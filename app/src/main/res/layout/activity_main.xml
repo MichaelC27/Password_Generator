@@ -41,7 +41,7 @@
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btn_generar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -78,15 +78,37 @@
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
-                <SeekBar
-                    android:id="@+id/seekBar"
-                    style="@style/Widget.AppCompat.SeekBar"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="5"
-                    android:progressTint="@color/fondo_titulo"
-                    android:thumb="@drawable/bloqueado" />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                   >
+
+                    <TextView
+                        android:id="@+id/lbl_seekbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/baseline_square_blue_24"
+                        android:padding="7dp"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="15sp" />
+
+                    <SeekBar
+                        android:id="@+id/seekBar"
+                        style="@style/Widget.AppCompat.SeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_weight="5"
+                        android:max="20"
+                        android:progressTint="@color/fondo_titulo"
+                        android:thumb="@drawable/bloqueado" />
+                </LinearLayout>
+
             </TableRow>
 
             <CheckBox
