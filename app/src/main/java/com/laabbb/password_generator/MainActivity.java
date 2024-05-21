@@ -1,6 +1,7 @@
 package com.laabbb.password_generator;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,12 +18,16 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     SeekBar seekBar;
     Button btn_generar;
     TextView lbl_seekbar;
+    Handler handler = new Handler();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +74,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                // Opcional: Puedes manejar el evento cuando se empieza a interactuar con el SeekBar
+                // Mostrar el TextView cuando el usuario comienza a interactuar con el SeekBar
+                lbl_seekbar.setVisibility(View.VISIBLE);
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                // Opcional: Puedes manejar el evento cuando se deja de interactuar con el SeekBar
+                // Ocultar el TextView después de 2 segundos cuando el usuario deja de interactuar con el SeekBar
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        lbl_seekbar.setVisibility(View.INVISIBLE);
+                    }
+                }, 1000);
             }
         });
 
