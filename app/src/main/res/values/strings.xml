@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Password_generator</string>
+    <string name="titulo">Generador de Contraseñas</string>
+    <string name="btn_texto">Generar Contraseña</string>
+    <string name="btn_copiar">Copiar</string>
+    <string name="longitud">Longitud</string>
+</resources>
