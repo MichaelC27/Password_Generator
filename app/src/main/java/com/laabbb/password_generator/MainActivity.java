@@ -18,6 +18,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn_generar;
     TextView lbl_seekbar;
     Handler handler = new Handler();
-
+    LottieAnimationView chk1, chk2, chk3,chk4;
+    boolean bchk1 = false, bchk2 = false, bchk3 = false,bchk4=false;
 
 
     @Override
@@ -43,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Referencias a los componentes de la interfaz
+        chk1 = findViewById(R.id.chk1);
+        chk2 = findViewById(R.id.chk2);
+        chk3 = findViewById(R.id.chk3);
+        chk4 = findViewById(R.id.chk4);
         toolbar = findViewById(R.id.toolbar);
         seekBar = findViewById(R.id.seekBar);
         btn_generar = findViewById(R.id.btn_generar);
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                // Ocultar el TextView después de 2 segundos cuando el usuario deja de interactuar con el SeekBar
+                // Ocultar el TextView después de 1 segundos cuando el usuario deja de interactuar con el SeekBar
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -89,6 +96,97 @@ public class MainActivity extends AppCompatActivity {
                 }, 1000);
             }
         });
+
+        //Boton Chek 1
+        chk1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!bchk1) {
+                    // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
+                    chk1.setMinFrame(0);
+                    chk1.setMaxFrame(50);
+                    chk1.setSpeed(3f);
+                    chk1.playAnimation();
+                    bchk1 = true;
+
+                } else {
+                    // Reiniciar la animación para mostrar desde el principio
+                    chk1.setMinFrame(0);
+                    chk1.setMaxFrame(50); // Establecer el cuadro máximo como la duración total de la animación
+                    chk1.setSpeed(-4f);
+                    chk1.playAnimation();
+                    bchk1 = false;
+                }
+            }
+        });
+
+        //Boton Check 2
+        chk2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!bchk2) {
+                    // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
+                    chk2.setMinFrame(0);
+                    chk2.setMaxFrame(50);
+                    chk2.setSpeed(3f);
+                    chk2.playAnimation();
+                    bchk2 = true;
+
+                } else {
+                    // Reiniciar la animación para mostrar desde el principio
+                    chk2.setMinFrame(0);
+                    chk2.setMaxFrame(50); // Establecer el cuadro máximo como la duración total de la animación
+                    chk2.setSpeed(-4f);
+                    chk2.playAnimation();
+                    bchk2 = false;
+                }
+            }
+        });
+        //Boton Check 3
+        chk3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!bchk3) {
+                    // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
+                    chk3.setMinFrame(0);
+                    chk3.setMaxFrame(50);
+                    chk3.setSpeed(3f);
+                    chk3.playAnimation();
+                    bchk3 = true;
+
+                } else {
+                    // Reiniciar la animación para mostrar desde el principio
+                    chk3.setMinFrame(0);
+                    chk3.setMaxFrame(50); // Establecer el cuadro máximo como la duración total de la animación
+                    chk3.setSpeed(-4f);
+                    chk3.playAnimation();
+                    bchk3 = false;
+                }
+            }
+        });
+        //Boton Check 4
+        chk4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!bchk4) {
+                    // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
+                    chk4.setMinFrame(0);
+                    chk4.setMaxFrame(50);
+                    chk4.setSpeed(3f);
+                    chk4.playAnimation();
+                    bchk4 = true;
+
+                } else {
+                    // Reiniciar la animación para mostrar desde el principio
+                    chk4.setMinFrame(0);
+                    chk4.setMaxFrame(50); // Establecer el cuadro máximo como la duración total de la animación
+                    chk4.setSpeed(-4f);
+                    chk4.playAnimation();
+                    bchk4 = false;
+                }
+            }
+        });
+
 
         // Configurar el listener para el botón btn_generar
         btn_generar.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

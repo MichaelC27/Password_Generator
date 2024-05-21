@@ -4,4 +4,8 @@
     <string name="btn_texto">Generar Contraseña</string>
     <string name="btn_copiar">Copiar</string>
     <string name="longitud">Longitud</string>
+    <string name="opcion_1">Incluir letras mayúsculas</string>
+    <string name="opcion_2">Incluir letras minúsculas</string>
+    <string name="opcion_3">Incluir números</string>
+    <string name="opcion_4">Incluir caracteres especiales</string>
 </resources>
