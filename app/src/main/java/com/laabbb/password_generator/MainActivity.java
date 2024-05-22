@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
                     chk1.setMinFrame(0);
                     chk1.setMaxFrame(50);
-                    chk1.setSpeed(3f);
+                    chk1.setSpeed(2f);
                     chk1.playAnimation();
                     bchk1 = true;
 
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
                     // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
                     chk2.setMinFrame(0);
                     chk2.setMaxFrame(50);
-                    chk2.setSpeed(3f);
+                    chk2.setSpeed(2f);
                     chk2.playAnimation();
                     bchk2 = true;
 
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                     // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
                     chk3.setMinFrame(0);
                     chk3.setMaxFrame(50);
-                    chk3.setSpeed(3f);
+                    chk3.setSpeed(2f);
                     chk3.playAnimation();
                     bchk3 = true;
 
@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     // Establecer el cuadro máximo como 50 para mostrar solo la mitad de la animación
                     chk4.setMinFrame(0);
                     chk4.setMaxFrame(50);
-                    chk4.setSpeed(3f);
+                    chk4.setSpeed(2f);
                     chk4.playAnimation();
                     bchk4 = true;
 
