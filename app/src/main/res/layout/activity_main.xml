@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="@drawable/gradient_background"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
@@ -29,60 +29,99 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/lbl_password"
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:background="@color/backgraund_password"
-                android:gravity="center"
-                android:text="Contraseña"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
 
-            <Button
-                android:id="@+id/btn_generar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/btn_generar"
-                android:text="@string/btn_texto"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                app:cornerRadius="0dp" />
+                <TextView
+                    android:id="@+id/lbl_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/border_background"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:text="Contraseña"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"/>
+            </TableRow>
 
-            <Button
-                android:id="@+id/btn_Copiar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/btn_copiar"
-                android:text="@string/btn_copiar"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:cornerRadius="0dp" />
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5">
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <Button
+                    android:id="@+id/btn_generar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_generar"
+                    android:text="@string/btn_texto"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:cornerRadius="0dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <Button
+                    android:id="@+id/btn_Copiar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/btn_copiar"
+                    android:text="@string/btn_copiar"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:cornerRadius="0dp" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp">
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
                     android:text="@string/longitud"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                   >
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/lbl_seekbar"
@@ -113,112 +152,161 @@
 
             </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:orientation="horizontal">
+                android:layout_weight="4"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="8dp">
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/chk1"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:lottie_autoPlay="false"
-                    app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="293dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/opcion_1"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/chk1"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
 
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="293dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/opcion_1"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:orientation="horizontal">
+                android:layout_weight="4"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="8dp">>
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/chk2"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:lottie_autoPlay="false"
-                    app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/opcion_2"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/chk2"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
 
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/opcion_2"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:orientation="horizontal">
+                android:layout_weight="4"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="8dp">>
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/chk3"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:lottie_autoPlay="false"
-                    app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/opcion_3"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/chk3"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
 
-            <LinearLayout
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/opcion_3"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
-                android:orientation="horizontal">
+                android:layout_weight="4"
+                android:gravity="center"
+                android:paddingLeft="3dp"
+                android:paddingTop="8dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="8dp">>
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:id="@+id/chk4"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    app:lottie_autoPlay="false"
-                    app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:text="@string/opcion_4"
-                    android:textColor="@color/black"
-                    android:textSize="22sp" />
-            </LinearLayout>
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/chk4"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        app:lottie_autoPlay="false"
+                        app:lottie_fileName="chk.json"></com.airbnb.lottie.LottieAnimationView>
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/opcion_4"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </TableRow>
 
 
         </LinearLayout>
 
     </LinearLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
