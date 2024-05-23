@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Générateur de mot de passe</string>
+    <string name="titulo">Générateur de mot de passe</string>
+    <string name="lbl_Contraseña">Mot de passe</string>
+    <string name="btn_texto">Générer</string>
+    <string name="btn_copiar">Copier</string>
+    <string name="longitud">Longueur</string>
+    <string name="opcion_1">Inclure des lettres majuscules</string>
+    <string name="opcion_2">Inclure des lettres minuscules</string>
+    <string name="opcion_3">Inclure des chiffres</string>
+    <string name="opcion_4">Inclure des caractères spéciau</string>
+</resources>
