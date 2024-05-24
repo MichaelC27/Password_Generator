@@ -18,6 +18,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.laabbb.password_generator.Clase.Password;
+
 import com.airbnb.lottie.LottieAnimationView;
 
 
@@ -26,10 +28,10 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     SeekBar seekBar;
     Button btn_generar;
-    TextView lbl_seekbar;
+    TextView lbl_seekbar, lbl_password;
     Handler handler = new Handler();
-    LottieAnimationView chk1, chk2, chk3,chk4;
-    boolean bchk1 = false, bchk2 = false, bchk3 = false,bchk4=false;
+    LottieAnimationView chk1, chk2, chk3, chk4;
+    boolean bchk1 = false, bchk2 = false, bchk3 = false, bchk4 = false;
 
 
     @Override
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         seekBar = findViewById(R.id.seekBar);
         btn_generar = findViewById(R.id.btn_generar);
         lbl_seekbar = findViewById(R.id.lbl_seekbar);
+        lbl_password = findViewById(R.id.lbl_password);
 
         // Establecer la toolbar como la action bar
         setSupportActionBar(toolbar);
@@ -194,6 +197,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Obtener el progreso actual del SeekBar
                 int progress = seekBar.getProgress();
+                String pass = "";
+                if (bchk1 || bchk2 || bchk3 || bchk4) {
+                    if (progress >= 8)
+                        pass = Password.generarRandomPassword(progress, bchk1, bchk2, bchk3, bchk4);
+                    else {
+                        Toast.makeText(MainActivity.this, "Selecciona un valor mayor a 8", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(MainActivity.this, "Selecciona al menos una opción", Toast.LENGTH_SHORT).show();
+                }
+                lbl_password.setText(pass);
 
                 // Mostrar un Toast con la selección actual del SeekBar
                 Toast.makeText(MainActivity.this, "Selección del SeekBar: " + progress, Toast.LENGTH_SHORT).show();
