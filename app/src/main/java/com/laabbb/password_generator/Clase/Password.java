@@ -29,7 +29,7 @@ public class Password {
 
             }
 
-            return password.toString();
+            return password;
     }
 
 }
