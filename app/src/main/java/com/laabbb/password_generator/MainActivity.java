@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // Configurar el listener para el botón btn_generar
+        //Botón btn_generar
         btn_generar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -209,8 +209,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 lbl_password.setText(pass);
 
-                // Mostrar un Toast con la selección actual del SeekBar
-                Toast.makeText(MainActivity.this, "Selección del SeekBar: " + progress, Toast.LENGTH_SHORT).show();
+
+
             }
         });
     }
