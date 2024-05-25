@@ -278,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
 
         } else if (item.getItemId() == R.id.btn_restart) {
+            lbl_password.setText("");
             seekBar.setProgress(0);
             //btnchk1
             chk1.setMinFrame(0);
