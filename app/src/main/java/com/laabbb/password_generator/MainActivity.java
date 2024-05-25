@@ -1,5 +1,11 @@
 package com.laabbb.password_generator;
 
+import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -27,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     SeekBar seekBar;
-    Button btn_generar;
+    Button btn_generar,btn_Copiar;
+
     TextView lbl_seekbar, lbl_password;
     Handler handler = new Handler();
     LottieAnimationView chk1, chk2, chk3, chk4;
@@ -57,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         btn_generar = findViewById(R.id.btn_generar);
         lbl_seekbar = findViewById(R.id.lbl_seekbar);
         lbl_password = findViewById(R.id.lbl_password);
+        btn_Copiar= findViewById(R.id.btn_Copiar);
 
         // Establecer la toolbar como la action bar
         setSupportActionBar(toolbar);
@@ -122,6 +130,22 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        btn_Copiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                copyToClipboard(String.valueOf(lbl_password.getText()), v);
+            }
+
+            private void copyToClipboard(String texto, View v) {
+                ClipboardManager portapapeles = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("lbl_password", texto);
+                portapapeles.setPrimaryClip(clip);
+                Toast.makeText(v.getContext(), "Contraseña copiada al portapapeles", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         //Boton Check 2
         chk2.setOnClickListener(new View.OnClickListener() {
@@ -213,6 +237,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 
@@ -227,10 +253,66 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         // Manejar las acciones de los items del menú
         if (item.getItemId() == R.id.btn_salir) {
-            Toast.makeText(this, "Salir", Toast.LENGTH_SHORT).show();
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setTitle("Confirmar Salida");
+            builder.setMessage("¿Desea salir de la aplicación?");
+
+            builder.setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finishAffinity();
+                }
+            });
+
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Toast.makeText(MainActivity.this, "Salida cancelada", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+            return true;
+
         } else if (item.getItemId() == R.id.btn_restart) {
-            Toast.makeText(this, "Reestablecer", Toast.LENGTH_SHORT).show();
+            seekBar.setProgress(0);
+            //btnchk1
+            chk1.setMinFrame(0);
+            chk1.setMaxFrame(50);
+            chk1.setSpeed(-4f);
+            chk1.playAnimation();
+            bchk1 = false;
+
+            //btnchk2
+            chk2.setMinFrame(0);
+            chk2.setMaxFrame(50);
+            chk2.setSpeed(-4f);
+            chk2.playAnimation();
+            bchk2 = false;
+
+            //btnchk3
+            chk3.setMinFrame(0);
+            chk3.setMaxFrame(50);
+            chk3.setSpeed(-4f);
+            chk3.playAnimation();
+            bchk3 = false;
+
+            //btnchk4
+            chk4.setMinFrame(0);
+            chk4.setMaxFrame(50); // Establecer el cuadro máximo como la duración total de la animación
+            chk4.setSpeed(-4f);
+            chk4.playAnimation();
+            bchk4 = false;
+
+            Toast.makeText(this, "Reestablecido", Toast.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }
+
